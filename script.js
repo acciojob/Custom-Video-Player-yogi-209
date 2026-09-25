@@ -16,12 +16,8 @@ function togglePlay(){
 	}
 }
 function updateButton(){
-	if(video.paused){
-		toggle.textContent='►';
-	}
-	else{
-		toggle.textContent='❚ ❚';
-	}
+	const icon=video.paused?'►' : '❚ ❚';
+	toggle.textContent=icon;
 }
 function skip()
 {
@@ -30,7 +26,7 @@ function skip()
 function handleRangeUpdate() {
 	video[this.name]=this.value;
 }
-function handleprogress()
+function handleProgress()
 {
 	const percent=(video.currentTime/video.duration)*100;
 	progressBar.style.flexBasis=`${percent}%`;
