@@ -25,9 +25,13 @@ function updateButton(){
 }
 function skip()
 {
-	video.currentTime+=number(this.dataset.skip);
+	video.currentTime+=parseFloat(this.dataset.skip);
 }
 function handleRangeUpdate() {
+	video[this.name]=this.value;
+}
+function handleprogress()
+{
 	const percent=(video.currentTime/video.duration)*100;
 	progressBar.style.flexbasis='${percent}%'
 }
